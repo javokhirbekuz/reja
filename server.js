@@ -47,6 +47,10 @@ app.post("/create-item", (req, res) => {
 app.get("/", (req, res) => {
     res.render("harid");
 });
+
+app.get("/hello", (req, res) => {
+    res.send("<h1>Hello World!</h1>");
+});
 const server = http.createServer(app);
 >>>>>>> 206253e (BRR: initial setup)
 const PORT = 3000;
