@@ -3,9 +3,125 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><%=user.name%></title>
+        <link rel="stylesheet" href="/main.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+        />
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <title>PORTFOLIO</title>
     </head>
     <body>
-        <h1>You're at the Authors</h1>
+        <div class="frame">
+            <div class="main_frame">
+                <div class="left_frame">
+                    <div class="left_1">
+                        <div class="left_1_logo">
+                            <img
+                                src="/images/profile.png"
+                                width="150px"
+                                height="150px"
+                                alt=""
+                            />
+                        </div>
+                        <div class="left_1_name"><%=user.name%></div>
+                        <div class="left_1_profession">
+                            <%=user.profession%>
+                        </div>
+                        <div class="left_1_icons">
+                            <a href="" class="link_href">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Facebook.png"
+                                        alt=""
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a href="" class="link_href">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Instagram.png"
+                                        alt=""
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a href="" class="link_href">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Twitter.png"
+                                        alt=""
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a href="" class="link_href">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Linkeding.png"
+                                        alt=""
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a href="" class="link_href">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Youtube.png"
+                                        alt=""
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                            <a href="" class="link_href">
+                                <div class="icon">
+                                    <img
+                                        src="icon/Dribbble.png"
+                                        alt=""
+                                        class="icon-1"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="marginer"></div>
+                    <div class="left_2">
+                        <div class="left_2_age">
+                            <div class="age-1">Age:</div>
+                            <div class="age-2"><%=user.age%></div>
+                        </div>
+                        <div class="left_2_residence">
+                            <div class="left_2_age">
+                                <div class="age-1">Age:</div>
+                                <div class="age-2"><%=user.age%></div>
+                            </div>
+                        </div>
+                        <div class="left_2_freelance">
+                            <div class="left_2_age">
+                                <div class="age-1">Age:</div>
+                                <div class="age-2"><%=user.age%></div>
+                            </div>
+                        </div>
+                        <div class="left_2_address">
+                            <div class="left_2_age">
+                                <div class="age-1">Age:</div>
+                                <div class="age-2"><%=user.age%></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marginer"></div>
+                    <div class="left_3"></div>
+                    <div class="marginer"></div>
+                    <div class="left_4"></div>
+                    <div class="marginer"></div>
+                    <div class="left_5"></div>
+                    <div class="marginer"></div>
+                    <div class="left_6"></div>
+                </div>
+                <div class="midd_frame"></div>
+                <div class="right_frame"></div>
+            </div>
+        </div>
     </body>
 </html>
