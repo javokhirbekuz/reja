@@ -120,4 +120,11 @@ const countDigits = (string) => {
     return count;
 };
 
-console.log(countDigits("ad2a54y79wet0sfgb9"));
+console.log(countDigits("ad2a54y79wkl12j312039109283-2et0sfgb9"));
+
+const countDigits2 = (string) => {
+    const nList = string.split("").filter((ele) => parseInt(ele) || ele == "0");
+    const result = nList.length;
+    return result;
+};
+console.log(countDigits2("ad2a54y79wkl12j312039109283-2et0sfgb9"));
