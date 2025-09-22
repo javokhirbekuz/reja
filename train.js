@@ -80,28 +80,44 @@
 
 // // run();
 
-const countLetter = (letter, word) => {
+// // // // // MITask-A
+// const countLetter = (letter, word) => {
+//     let count = 0;
+//     for (i in word.split("")) {
+//         if (word[i] === letter) {
+//             count++;
+//         }
+//     }
+//     return count;
+// };
+
+// const countLetter2 = (letter, word) => {
+//     const count = word.split("").reduce((total, curIn) => {
+//         if (curIn === letter) {
+//             total++;
+//         }
+//         return total;
+//     }, 0);
+//     return count;
+// };
+// console.log(
+//     countLetter2(
+//         "a",
+//         "salom dunyo men sizlarga salom berish uchun Amerikadan etib keldim."
+//     )
+// );
+
+// // // // // MITask-B
+// countDigits("ad2a54y79wet0sfgb9") return 7
+
+const countDigits = (string) => {
     let count = 0;
-    for (i in word.split("")) {
-        if (word[i] === letter) {
-            count++;
+    for (let i = 0; i <= string.length; i++) {
+        if (parseInt(string[i]) || string[i] == "0") {
+            count += 1;
         }
     }
     return count;
 };
 
-const countLetter2 = (letter, word) => {
-    const count = word.split("").reduce((total, curIn) => {
-        if (curIn === letter) {
-            total++;
-        }
-        return total;
-    }, 0);
-    return count;
-};
-console.log(
-    countLetter2(
-        "a",
-        "salom dunyo men sizlarga salom berish uchun Amerikadan etib keldim."
-    )
-);
+console.log(countDigits("ad2a54y79wet0sfgb9"));
