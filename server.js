@@ -40,5 +40,7 @@ const server = http.createServer(app);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`The app is running on the port: ${PORT}`);
+    console.log(
+        `The app is running on the port: ${PORT}. http://localhost:${PORT}`
+    );
 });
