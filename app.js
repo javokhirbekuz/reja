@@ -1,6 +1,15 @@
 console.log("WEB Serverni boshlash");
+const fs = require("fs");
 const express = require("express");
 const app = express();
+
+let user;
+fs.readFile("./database/users.json", "utf8", (err, data) => {
+    if (err) console.log("ERROR:", err);
+    else {
+        user = JSON.parse(data);
+    }
+});
 
 // requiring MongoDB
 const db = require("./server").db();
@@ -21,12 +30,7 @@ app.post("/create-item", (req, res) => {
     console.log("user entered /create-item");
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-        if (err) {
-            console.log("ERROR:", err);
-            res.end("Something went wrong");
-        } else {
-            res.redirect("/");
-        }
+        res.json(data.ops[0]);
     });
 });
 
