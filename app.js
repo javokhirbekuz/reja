@@ -1,6 +1,8 @@
 console.log("WEB Serverni boshlash");
 const fs = require("fs");
 const express = require("express");
+const mongodb = require("mongodb");
+
 const app = express();
 
 let user;
@@ -32,6 +34,16 @@ app.post("/create-item", (req, res) => {
     db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
         res.json(data.ops[0]);
     });
+});
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne(
+        { _id: new mongodb.ObjectId(id) },
+        (err, data) => {
+            res.json({ status: "success" });
+        }
+    );
 });
 
 app.get("/author", (req, res) => {
