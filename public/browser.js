@@ -34,7 +34,7 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
             createField.focus();
         })
         .catch((err) => {
-            console.log("Iltimos qaytadan harakat qiling!");
+            alert("Iltimos qaytadan harakat qiling!");
         });
 });
 
@@ -47,17 +47,49 @@ document.addEventListener("click", (e) => {
                     id: e.target.getAttribute("data-id"),
                 })
                 .then((response) => {
-                    console.log(response.data);
                     e.target.parentElement.parentElement.remove();
                 })
                 .catch((err) => {
-                    console.log("Iltimos qaytadan harakat qiling!");
+                    alert("Iltimos qaytadan harakat qiling!");
                 });
         }
     }
 
     // edit oper
     if (e.target.classList.contains("edit-me")) {
-        alert("Siz edit tugmasini bosdingiz!");
+        const newInput = prompt(
+            "Insert the modification",
+            e.target.parentElement.parentElement.querySelector(".item-text")
+                .innerHTML
+        );
+        if (newInput) {
+            axios
+                .post("/edit-item", {
+                    id: e.target.getAttribute("data-id"),
+                    newInput: newInput,
+                })
+                .then((response) => {
+                    e.target.parentElement.parentElement.querySelector(
+                        ".item-text"
+                    ).innerHTML = newInput;
+                })
+                .catch((err) => {
+                    console.log(err);
+                    alert("Iltimos qaytadan harakat qiling!");
+                });
+        }
+    }
+});
+
+// clean-all
+document.getElementById("clean-all").addEventListener("click", () => {
+    if (confirm("Are you sure to delete all?")) {
+        axios
+            .post("/delete-all", { delete_all: true })
+            .then((response) => {
+                document.location.reload();
+                alert(response.data.state);
+            })
+            .catch((err) => {});
     }
 });
