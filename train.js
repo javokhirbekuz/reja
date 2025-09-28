@@ -110,21 +110,32 @@
 // // // // // MITask-B
 // countDigits("ad2a54y79wet0sfgb9") return 7
 
-const countDigits = (string) => {
-    let count = 0;
-    for (let i = 0; i <= string.length; i++) {
-        if (parseInt(string[i]) || string[i] == "0") {
-            count += 1;
-        }
-    }
-    return count;
-};
+// const countDigits = (string) => {
+//     let count = 0;
+//     for (let i = 0; i <= string.length; i++) {
+//         if (parseInt(string[i]) || string[i] == "0") {
+//             count += 1;
+//         }
+//     }
+//     return count;
+// };
 
-console.log(countDigits("ad2a54y79wkl12j312039109283-2et0sfgb9"));
+// console.log(countDigits("ad2a54y79wkl12j312039109283-2et0sfgb9"));
 
-const countDigits2 = (string) => {
-    const nList = string.split("").filter((ele) => parseInt(ele) || ele == "0");
-    const result = nList.length;
-    return result;
+// const countDigits2 = (string) => {
+//     const nList = string.split("").filter((ele) => parseInt(ele) || ele == "0");
+//     const result = nList.length;
+//     return result;
+// };
+// console.log(countDigits2("ad2a54y79wkl12j312039109283-2et0sfgb9"));
+
+// MITask-C
+// checkContent("mitgroup", "gmtiprou") return true;
+
+const checkContent = (string1, string2) => {
+    return (
+        string1.trim().split("").sort().join() ===
+        string2.trim().split("").sort().join()
+    );
 };
-console.log(countDigits2("ad2a54y79wkl12j312039109283-2et0sfgb9"));
+console.log(checkContent("mitgroup", "gmtiprou"));
