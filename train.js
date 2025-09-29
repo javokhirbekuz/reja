@@ -129,13 +129,49 @@
 // };
 // console.log(countDigits2("ad2a54y79wkl12j312039109283-2et0sfgb9"));
 
-// MITask-C
-// checkContent("mitgroup", "gmtiprou") return true;
+// // MITask-C
+// // checkContent("mitgroup", "gmtiprou") return true;
 
-const checkContent = (string1, string2) => {
-    return (
-        string1.trim().split("").sort().join() ===
-        string2.trim().split("").sort().join()
-    );
-};
-console.log(checkContent("mitgroup", "gmtiprou"));
+// const checkContent = (string1, string2) => {
+//     return (
+//         string1.trim().split("").sort().join() ===
+//         string2.trim().split("").sort().join()
+//     );
+// };
+// console.log(checkContent("mitgroup", "gmtiprou"));
+
+// MITask-D
+// const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+
+const moment = require("moment");
+class Shop {
+    constructor(product1Qnty, product2Qnty, product3Qnty) {
+        this.stock = {
+            non: product1Qnty,
+            lagmon: product2Qnty,
+            cola: product3Qnty,
+        };
+    }
+    qoldiq() {
+        const time = moment().format("HH:mm");
+        return `hozir ${time} da ${this.stock.non} ta non, ${this.stock.lagmon} ta lagmon va ${this.stock.cola} ta cola mavjud!`;
+    }
+    sotish(product, quantity) {
+        if (this.stock[product] - quantity >= 0) {
+            this.stock[product] -= quantity;
+            return;
+        } else console.log(`${quantity} ta ${product} mavjud emas!`);
+    }
+    qabul(product, quantity) {
+        this.stock[product] += quantity;
+        return;
+    }
+}
+
+const shop = new Shop(3, 5, 7);
+
+console.log(shop.qoldiq());
+
+shop.sotish("non", 2);
+shop.sotish("cola", 12);
+console.log(shop.qoldiq());
