@@ -157,14 +157,14 @@ class Shop {
         return `hozir ${time} da ${this.stock.non} ta non, ${this.stock.lagmon} ta lagmon va ${this.stock.cola} ta cola mavjud!`;
     }
     sotish(product, quantity) {
-        if (this.stock[product] - quantity >= 0) {
-            this.stock[product] -= quantity;
-            return;
-        } else console.log(`${quantity} ta ${product} mavjud emas!`);
+        if (!this.stock[product]) {
+            console.log(`${product} mavjud emas!`);
+        } else if (!(this.stock[product] >= quantity)) {
+            console.log(`${quantity} ta ${product} mavjud emas!`);
+        } else this.stock[product] -= quantity;
     }
     qabul(product, quantity) {
         this.stock[product] += quantity;
-        return;
     }
 }
 
