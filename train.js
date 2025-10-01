@@ -140,38 +140,49 @@
 // };
 // console.log(checkContent("mitgroup", "gmtiprou"));
 
-// MITask-D
-// const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+// // MITask-D
+// // const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
 
-const moment = require("moment");
-class Shop {
-    constructor(product1Qnty, product2Qnty, product3Qnty) {
-        this.stock = {
-            non: product1Qnty,
-            lagmon: product2Qnty,
-            cola: product3Qnty,
-        };
-    }
-    qoldiq() {
-        const time = moment().format("HH:mm");
-        return `hozir ${time} da ${this.stock.non} ta non, ${this.stock.lagmon} ta lagmon va ${this.stock.cola} ta cola mavjud!`;
-    }
-    sotish(product, quantity) {
-        if (!this.stock[product]) {
-            console.log(`${product} mavjud emas!`);
-        } else if (!(this.stock[product] >= quantity)) {
-            console.log(`${quantity} ta ${product} mavjud emas!`);
-        } else this.stock[product] -= quantity;
-    }
-    qabul(product, quantity) {
-        this.stock[product] += quantity;
-    }
-}
+// const moment = require("moment");
+// class Shop {
+//     constructor(product1Qnty, product2Qnty, product3Qnty) {
+//         this.non = product1Qnty;
+//         this.lagmon = product2Qnty;
+//         this.cola = product3Qnty;
+//     }
+//     qoldiq() {
+//         const time = moment().format("HH:mm");
+//         return `hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola mavjud!`;
+//     }
+//     sotish(product, quantity) {
+//         if (!this[product]) {
+//             console.log(`${product} mavjud emas!`);
+//         } else if (!(this[product] >= quantity)) {
+//             console.log(`${quantity} ta ${product} mavjud emas!`);
+//         } else this[product] -= quantity;
+//     }
+//     qabul(product, quantity) {
+//         this[product] += quantity;
+//     }
+// }
 
-const shop = new Shop(3, 5, 7);
+// const shop = new Shop(3, 5, 7);
 
-console.log(shop.qoldiq());
+// console.log(shop.qoldiq());
 
-shop.sotish("non", 2);
-shop.sotish("cola", 12);
-console.log(shop.qoldiq());
+// shop.sotish("non", 2);
+// shop.sotish("col", 12);
+// console.log(shop.qoldiq());
+
+// MITask-E:
+// getReverse
+
+const getReverse = (string) => {
+    const result = [];
+    string.split("").map((letter) => result.unshift(letter));
+    return result.join("");
+};
+
+console.log(getReverse("hello           "));
+console.log(getReverse("oq bayroq"));
+console.log(getReverse("demak nimadur"));
