@@ -177,12 +177,29 @@
 // MITask-E:
 // getReverse
 
-const getReverse = (string) => {
-    const result = [];
-    string.split("").map((letter) => result.unshift(letter));
-    return result.join("");
-};
+// const getReverse = (string) => {
+//     const result = [];
+//     string.split("").map((letter) => result.unshift(letter));
+//     return result.join("");
+// };
 
-console.log(getReverse("hello           "));
-console.log(getReverse("oq bayroq"));
-console.log(getReverse("demak nimadur"));
+// console.log(getReverse("hello           "));
+// console.log(getReverse("oq bayroq"));
+// console.log(getReverse("demak nimadur"));
+
+// MITask-F:
+// findDoublers("hello"); true
+
+function findDoublers(data) {
+    const result = [];
+    for (letter of data) {
+        if (result.includes(letter)) {
+            return result.includes(letter);
+        } else {
+            result.push(letter);
+        }
+    }
+    return false;
+}
+console.log(findDoublers("helo"));
+console.log(findDoublers("hello"));
